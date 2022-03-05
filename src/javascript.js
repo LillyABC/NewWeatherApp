@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[dateElement.getDay()];
-  return `${day}, ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}.`;
 }
 
 function displayTemp(response) {
