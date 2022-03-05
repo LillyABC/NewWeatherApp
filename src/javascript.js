@@ -40,7 +40,19 @@ function displayTemp(response) {
   date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-let apiKey = "e18f3eef8f69e4c6f8550807956494a5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=${apiKey}&units=metric`;
+function search(newCity) {
+  let apiKey = "e18f3eef8f69e4c6f8550807956494a5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemp);
+}
 
-axios.get(apiUrl).then(displayTemp);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchBar = document.querySelector("#search-bar");
+  search(searchBar.value);
+}
+
+search("Seoul");
+
+let searchForm = document.querySelector(".topButton");
+searchForm.addEventListener("submit", handleSubmit);
