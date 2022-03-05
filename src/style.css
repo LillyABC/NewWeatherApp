@@ -1,10 +1,18 @@
 body {
-  background-color: #0a443d;
+  background: radial-gradient(
+    circle at -8.9% 51.2%,
+    #355e58 0%,
+    #0a1816 15.9%,
+    #193a35 15.9%,
+    #bad6d1 24.4%,
+    #355e58 24.5%,
+    rgb(6, 17, 15) 90%
+  );
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .background-border {
-  background-color: #73b6a9;
+  background-color: #bad6d1;
   border-radius: 4px;
   border: 1px solid #030a09;
   box-shadow: 2px 2px 5px #030a09;
@@ -14,7 +22,6 @@ body {
 }
 
 h1 {
-  color: #184d47;
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 0;
@@ -32,8 +39,8 @@ ul {
 }
 
 #search-bar {
-  background-color: whitesmoke;
-  color: #184d47;
+  background-color: #f5f5f5;
+  color: #030a09;
   border-radius: 4px;
   border: 1px solid #030a09;
   box-shadow: 2px 2px 5px #030a09;
@@ -42,7 +49,7 @@ ul {
 }
 
 #search-submit {
-  background-color: #184d47;
+  background-color: #193a35;
   color: whitesmoke;
   border-radius: 4px;
   border: 1px solid #030a09;
@@ -53,22 +60,7 @@ ul {
 }
 
 #search-submit:hover {
-  background-color: #030a09;
-}
-
-#location-submit {
-  background-color: #29857a;
-  color: #f5f5f5;
-  border-radius: 4px;
-  border: 1px solid #030a09;
-  box-shadow: 2px 2px 5px #030a09;
-  font-size: 15px;
-  padding: 5px 20px;
-  transition: all 150ms ease-in-out;
-}
-
-#location-submit:hover {
-  background-color: #030a09;
+  background-color: #0a1816;
 }
 
 .topButton {
@@ -158,9 +150,9 @@ ul {
 }
 
 #github-link {
-  color: #29857a;
+  color: #f5f5f5;
 }
 
 #github-link:hover {
-  color: #f5f5f5;
+  color: #0a1816;
 }
