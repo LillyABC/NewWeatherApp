@@ -49,6 +49,7 @@ ul {
   box-shadow: 2px 2px 5px #030a09;
   font-size: 15px;
   padding: 5px 30px;
+  transition: all 150ms ease-in-out;
 }
 
 #search-submit:hover {
@@ -63,6 +64,7 @@ ul {
   box-shadow: 2px 2px 5px #030a09;
   font-size: 15px;
   padding: 5px 20px;
+  transition: all 150ms ease-in-out;
 }
 
 #location-submit:hover {
@@ -116,6 +118,12 @@ ul {
   box-shadow: 2px 2px 5px #030a09;
   font-size: 15px;
   padding: 5px 10px;
+  transition: all 150ms ease-in-out;
+}
+
+.forecastButton:hover {
+  background-color: #030a09;
+  cursor: pointer;
 }
 
 #code-by {
