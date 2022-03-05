@@ -4,7 +4,7 @@ body {
 }
 
 .background-border {
-  background-color: whitesmoke;
+  background-color: #29857a;
   border-radius: 4px;
   border: 1px solid #030a09;
   box-shadow: 2px 2px 5px #030a09;
@@ -90,24 +90,25 @@ ul {
   text-transform: capitalize;
 }
 
-.weather-icon-current {
-  color: #184d47;
-  font-size: 50px;
+#icon {
+  position: relative;
+  top: -15px;
 }
 
 #current-temperature {
   color: #030a09;
-  font-size: 50px;
+  font-size: 47px;
   font-weight: 900;
-  padding: 0 5px 0 10px;
+  position: relative;
+  top: 0px;
 }
 
 .bigC {
   color: #030a09;
-  font-size: 24px;
+  font-size: 17px;
   font-weight: bold;
   position: relative;
-  top: -20px;
+  top: -22px;
 }
 
 .forecastButton {

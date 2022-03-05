@@ -31,6 +31,7 @@ function displayTemp(response) {
   let wind = document.querySelector("#weather-wind");
   let rain = document.querySelector("#weather-rain");
   let date = document.querySelector("#current-date");
+  let icon = document.querySelector("#icon");
   temp.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -38,6 +39,7 @@ function displayTemp(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   rain.innerHTML = Math.round(response.data.clouds.all);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(newCity) {
