@@ -103,7 +103,7 @@ ul {
   top: 0px;
 }
 
-.bigC {
+#bigC {
   color: #030a09;
   font-size: 15px;
   font-weight: 600;
@@ -112,7 +112,7 @@ ul {
   top: -24px;
 }
 
-.bigF {
+.betweenCAndF {
   color: #030a09;
   font-size: 15px;
   font-weight: 600;
@@ -120,6 +120,19 @@ ul {
   top: -24px;
 }
 
+#bigF {
+  color: #030a09;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  top: -24px;
+}
+
+.celsiusFahrenheitLink .active {
+  text-decoration: none;
+}
+
+/*
 .forecastButton {
   background-color: #184d47;
   color: whitesmoke;
@@ -135,6 +148,7 @@ ul {
   background-color: #030a09;
   cursor: pointer;
 }
+*/
 
 #code-by {
   color: #f5f5f5;

@@ -63,8 +63,18 @@ function handleSubmit(event) {
 function showFahrenheit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temperature");
+  celsiusClick.classList.remove("active");
+  fahrenheitClick.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusClick.classList.add("active");
+  fahrenheitClick.classList.remove("active");
+  let tempElement = document.querySelector("#current-temperature");
+  tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
 let celsiusTemp = null;
@@ -72,7 +82,10 @@ let celsiusTemp = null;
 let searchForm = document.querySelector(".topButton");
 searchForm.addEventListener("submit", handleSubmit);
 
-let fahrenheitClick = document.querySelector(".bigF");
+let fahrenheitClick = document.querySelector("#bigF");
 fahrenheitClick.addEventListener("click", showFahrenheit);
+
+let celsiusClick = document.querySelector("#bigC");
+celsiusClick.addEventListener("click", showCelsius);
 
 search("Seoul");
