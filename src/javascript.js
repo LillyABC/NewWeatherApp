@@ -32,14 +32,20 @@ function displayTemp(response) {
   let rain = document.querySelector("#weather-rain");
   let date = document.querySelector("#current-date");
   let icon = document.querySelector("#icon");
-  temp.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemp = response.data.main.temp;
+
+  temp.innerHTML = Math.round(celsiusTemp);
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
   rain.innerHTML = Math.round(response.data.clouds.all);
   date.innerHTML = formatDate(response.data.dt * 1000);
-  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(newCity) {
@@ -54,7 +60,19 @@ function handleSubmit(event) {
   search(searchBar.value);
 }
 
-search("Seoul");
+function showFahrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsiusTemp = null;
 
 let searchForm = document.querySelector(".topButton");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitClick = document.querySelector(".bigF");
+fahrenheitClick.addEventListener("click", showFahrenheit);
+
+search("Seoul");
