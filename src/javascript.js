@@ -22,16 +22,38 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}.`;
 }
 
-function getForecast(coordinates) {
+/* function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "e18f3eef8f69e4c6f8550807956494a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
-}
+} */
 
-function displayForecast(response) {
-  console.log(response.data.daily);
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+     <div class="forecast-days">${day}</div>
+       <img
+          src="https://openweathermap.org/img/wn/04d@2x.png"
+          width="50"
+          alt="">
+       <div class="forecast-temp">
+       <span class="forecast-temp-max">18° </span>
+       | 12°</div>
+    </div>
+   `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayTemp(response) {
@@ -59,9 +81,10 @@ function displayTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  getForecast(response.data.coord);
+  //getForecast(response.data.coord);
 }
 
+// city
 function search(newCity) {
   let apiKey = "e18f3eef8f69e4c6f8550807956494a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
@@ -74,6 +97,7 @@ function handleSubmit(event) {
   search(searchBar.value);
 }
 
+// temp
 function showFahrenheit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temperature");
@@ -103,3 +127,4 @@ let celsiusClick = document.querySelector("#bigC");
 celsiusClick.addEventListener("click", showCelsius);
 
 search("Seoul");
+displayForecast();
