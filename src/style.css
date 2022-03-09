@@ -140,11 +140,15 @@ ul {
 
 .forecast-temp {
   font-size: 12px;
-  font-weight: lighter;
 }
 
 .forecast-temp-max {
   font-weight: 400;
+}
+
+.forecast-temp-min {
+  font-weight: 200;
+  opacity: 0.5;
 }
 
 #code-by {
